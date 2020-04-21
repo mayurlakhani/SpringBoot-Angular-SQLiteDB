@@ -21,3 +21,7 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+SpringBootTestServer/.idea/misc.xml
+SpringBootTestServer/.idea/modules.xml
+SpringBootTestServer/.idea/SpringBootTestServer.iml
+SpringBootTestServer/.idea/vcs.xml

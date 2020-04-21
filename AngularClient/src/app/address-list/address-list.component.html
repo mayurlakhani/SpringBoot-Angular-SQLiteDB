@@ -1,0 +1,33 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Address List</h2>
+    </div>
+</div>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>City</th>
+            <th>Street</th>
+            <th>HouseNo</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let address of address">
+            <td>{{address.name}}</td>
+            <td>{{address.city}}</td>
+            <td>{{address.street}}</td>
+            <td>{{address.houseNo}}</td>
+            <td><button (click)="deleteAddress(address.id)" class="btn btn-danger">Delete</button>
+            </td>
+          </tr> 
+              
+           <tr>
+            <td colspan="5">
+              <button (click)="goSave()"class="btn btn-success col-md-12">new</button> 
+              
+          </td>
+          </tr> 
+        </tbody>
+      </table>
