@@ -13,7 +13,7 @@ export class NewAddressComponent implements OnInit {
   }
 
    goSave(){
-  this.router.navigate(['/home/create']);
+  this.router.navigate(['/home']);
   }
 
 }

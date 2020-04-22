@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import {Address} from '../address';
 import { AppserviceService } from '../appservice.service';
 import { Router,ActivatedRoute } from '@angular/router';
-
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-address-list',
   templateUrl: './address-list.component.html',
@@ -13,12 +13,13 @@ import { Router,ActivatedRoute } from '@angular/router';
 })
 export class AddressListComponent implements OnInit {
 
+submitted = false;
 id: number;
-data: any;
-address: Observable<Address[]>;
+data: [];
+address:Address;
 name= ''; city=''; street=''; houseNo;
 constructor(private httpClient:HttpClient,private router: Router,
-private appServiceService:AppserviceService,private route: ActivatedRoute) { 
+private appServiceService:AppserviceService,private route: ActivatedRoute,private location: Location) { 
     }
 
 ngOnInit() {
@@ -28,9 +29,9 @@ ngOnInit() {
 
  reloadData() {
      this.appServiceService.getAddressList()
-    .subscribe(address=>
-    {  this.address=address;
-    console.log(address)});
+    .subscribe(data=>
+    {  this.data=data;
+    console.log(data)});
   }
 
   authenticate(username, password) {
@@ -49,29 +50,34 @@ ngOnInit() {
   }
 
   getAddress(id: number){
-    //this.id = this.route.snapshot.params['id'];
+    this.id = this.route.snapshot.params['id'];
     
     this.appServiceService.getAddress(id)
-      .subscribe(data => {
+      .subscribe(data => {this.address=data;
         console.log(data)
       }, error => console.log(error));
   }
 
   goSave(){
-  this.router.navigate(['/create']);
+  this.router.navigate(['']);
   }
  
 
-/*updateAddress() {
-    this.appServiceService.updateAddress(this.id, this.address)
+updateAddress() {
+ this.id = this.address.id;
+ console.log(this.id);
+    this.appServiceService.updateAddress(this.id,this.address)
       .subscribe(data => console.log(data), error => console.log(error));
     this.address = new Address();
-    this.gotoList();
+   
   }
 
   onSubmit() {
-    this.updateAddress();    
-  }*/
+  this.submitted = true;
+    this.updateAddress();
+    this.router.navigateByUrl('/home',{ skipLocationChange: true });
+    location.reload();    
+  }
 
 
   

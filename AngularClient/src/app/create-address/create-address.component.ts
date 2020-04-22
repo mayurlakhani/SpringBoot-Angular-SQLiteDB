@@ -39,7 +39,7 @@ constructor(private httpClient:HttpClient,private router: Router,
   }
 
    gotoList() {
-    this.router.navigateByUrl('/home',{ skipLocationChange: true });
+    //this.router.navigateByUrl('/home',{ skipLocationChange: true });
     location.reload();
   }
 

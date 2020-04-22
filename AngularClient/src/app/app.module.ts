@@ -8,6 +8,7 @@ import { LiveClockComponent } from './live-clock/live-clock.component';
 import { AddressListComponent } from './address-list/address-list.component';
 import { CreateAddressComponent } from './create-address/create-address.component';
 import { NewAddressComponent } from './new-address/new-address.component';
+import { UpdateAddressComponent } from './update-address/update-address.component';
 
 
 
@@ -17,7 +18,8 @@ import { NewAddressComponent } from './new-address/new-address.component';
     LiveClockComponent,
     AddressListComponent,
     CreateAddressComponent,
-    NewAddressComponent
+    NewAddressComponent,
+    UpdateAddressComponent
     
     
   ],

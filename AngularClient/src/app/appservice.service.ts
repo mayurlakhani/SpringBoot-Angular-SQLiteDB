@@ -25,9 +25,9 @@ export class AppserviceService {
   }
 
   updateAddress(id: number, value: any): Observable<Object> {
-  let username='VST';
-  const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa('user:VST') });
-    return this.http.put(`${this.baseUrl}/address/${id}`, value,{headers});
+  //let username='VST';
+  //const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa('user:VST') });
+    return this.http.put(`${this.baseUrl}/address/${id}`, value);
   }
 
   deleteAddress(id: number): Observable<any> {
