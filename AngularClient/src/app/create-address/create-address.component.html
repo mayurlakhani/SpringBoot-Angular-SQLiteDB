@@ -10,7 +10,7 @@
         Name is required.
       </div>
       <div *ngIf="name.errors.minlength">
-        Name must be VST at least 3 characters long.
+        Name must be at least 3 characters long.
       </div>
       
       
@@ -44,7 +44,7 @@
       
     </div>
      <div class="col-md-2 mb-2">
-      <input type="text" class="form-control" id="houseNo" name="houseNo" placeholder="Zip" required [(ngModel)]="address.houseNo" #houseNo="ngModel"  minlength = '1'>
+      <input type="text" class="form-control" id="houseNo" name="houseNo" placeholder="houseNo" required [(ngModel)]="address.houseNo" #houseNo="ngModel"  minlength = '1'>
     </div>
      <div *ngIf="street.invalid && (street.dirty || street.touched)"
     class="alert alert-danger">

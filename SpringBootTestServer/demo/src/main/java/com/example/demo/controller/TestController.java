@@ -31,7 +31,7 @@ public class TestController {
         return principal.getName();
     }*/
 
-    @GetMapping("/address")
+   /* @GetMapping("/address")
     @ResponseBody
     public List<Address> getAllEmployees(HttpServletRequest request) throws ResourceNotFoundException {
 
@@ -39,7 +39,7 @@ public class TestController {
         System.out.println("HTTP Request------>>"+ principal.getName());
         List<Address> address= addressRepository.findAllByName(principal.getName());
         return address;
-    }
+    }*/
 
     @GetMapping(produces = "application/json")
     @RequestMapping({ "/validateLogin" })
@@ -47,12 +47,12 @@ public class TestController {
         return new UserLogin("User successfully authenticated");
     }
 
-    /*@GetMapping("/address")
+    @GetMapping("/address")
     public List<Address> getAllEmployees() {
 
        return addressRepository.findAll();
 
-    }*/
+    }
 
     @GetMapping("/address/{id}")
     public ResponseEntity<Address> getAddressById(@PathVariable(value = "id") Long id)

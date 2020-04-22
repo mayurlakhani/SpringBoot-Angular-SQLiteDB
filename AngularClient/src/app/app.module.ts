@@ -7,6 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { LiveClockComponent } from './live-clock/live-clock.component';
 import { AddressListComponent } from './address-list/address-list.component';
 import { CreateAddressComponent } from './create-address/create-address.component';
+import { NewAddressComponent } from './new-address/new-address.component';
+
 
 
 @NgModule({
@@ -14,7 +16,8 @@ import { CreateAddressComponent } from './create-address/create-address.componen
     AppComponent,
     LiveClockComponent,
     AddressListComponent,
-    CreateAddressComponent
+    CreateAddressComponent,
+    NewAddressComponent
     
     
   ],

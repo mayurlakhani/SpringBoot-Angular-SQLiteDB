@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import {Address} from '../address';
 import { AppserviceService } from '../appservice.service';
 import { Router,ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-create-address',
   templateUrl: './create-address.component.html',
@@ -14,13 +15,13 @@ export class CreateAddressComponent implements OnInit {
 
 submitted = false;
 address:Address =new Address();
- constructor(private httpClient:HttpClient,private router: Router,
-private appServiceService:AppserviceService) { 
-    }
 
-  ngOnInit(): void {
- 
-  }
+constructor(private httpClient:HttpClient,private router: Router,
+
+      private appServiceService:AppserviceService,private location: Location) { 
+}
+
+  ngOnInit(): void {}
 
   save() {
   
@@ -38,7 +39,8 @@ private appServiceService:AppserviceService) {
   }
 
    gotoList() {
-    this.router.navigate(['/home']);
+    this.router.navigateByUrl('/home',{ skipLocationChange: true });
+    location.reload();
   }
 
 

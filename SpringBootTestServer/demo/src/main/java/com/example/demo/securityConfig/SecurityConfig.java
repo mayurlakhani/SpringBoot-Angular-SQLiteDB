@@ -1,4 +1,4 @@
-package com.example.demo.securityConfig;
+/*package com.example.demo.securityConfig;
 
 import javax.sql.DataSource;
 
@@ -21,19 +21,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private DataSource dataSource;
 
-   /* @Autowired
+    @Autowired
     public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication().dataSource(dataSource).passwordEncoder(passwordEncoder())
                 .usersByUsernameQuery("select user_name,password,id from user where user_name=?")
                 .authoritiesByUsernameQuery("select user_name, role_type,id from role where user_name=?");
-    }*/
+    }
 
 
 
-   /* @Bean
+    @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
-    }*/
+    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -55,3 +55,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     	authenticationMgr.inMemoryAuthentication().withUser("VST").password("{noop}42").authorities("0","1");
     }
 }
+*/

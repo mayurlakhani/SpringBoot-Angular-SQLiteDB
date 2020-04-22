@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-live-clock',
   templateUrl: './live-clock.component.html',
@@ -8,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 
 export class LiveClockComponent implements OnInit {
 
-    ngOnInit(){}
+constructor(private location: Location) {}
+    ngOnInit(){
+    	this.startTime();
+        }
 
 	 startTime() {
 	  var today = new Date();
@@ -17,7 +20,7 @@ export class LiveClockComponent implements OnInit {
 	  var s = today.getSeconds();
 	  m = this.checkTime(m);
 	  s = this.checkTime(s);
-	  document.getElementById('txt1').innerHTML =
+	  document.getElementById('txt').innerHTML =
 	  h + ":" + m + ":" + s;
 	  var t = setTimeout(this.startTime, 500);
 	}
@@ -26,6 +29,8 @@ export class LiveClockComponent implements OnInit {
 	  return i;
 	}
 
-
+pageRefresh() {
+	location.reload();
+}
 
 }
